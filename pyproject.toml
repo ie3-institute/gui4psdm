@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "python-project"
+version = "0.1.0"
+description = ""
+authors = ["Thomas <thomas.oberliessen@googlemail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+jupyter = "~=1.1.0"
+black = { extras = ["jupyter"], version = "~25.12.0" }
+flake8 = "^7.3.0"
+flake8-black = "^0.4.0"
+flake8-isort = "^7.0.0"
+pre-commit = "^4.5.1"
+PyYAML = "^6.0"
+
+[tool.isort]
+profile= "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
