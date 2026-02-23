@@ -1,4 +1,4 @@
-# python-template
+# gui4psdm
 
 Python template that includes all the basics for your new shiny project.
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/python-template.iml" filepath="$PROJECT_DIR$/.idea/python-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gui4psdm.iml" filepath="$PROJECT_DIR$/.idea/gui4psdm.iml" />
     </modules>
   </component>
 </project>
