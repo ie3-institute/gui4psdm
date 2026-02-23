@@ -1,12 +1,17 @@
 [tool.poetry]
-name = "python-project"
+name = "gui4psdm"
 version = "0.1.0"
 description = ""
-authors = ["Thomas <thomas.oberliessen@googlemail.com>"]
+authors = ["Josias Grünig <josias.gruenig@tu-dortmund.de>",
+            "Daniel Feismann <daniel.feismann@tu-dortmund.de>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pandas = "^3.0.1"
+folium = "^0.20.0"
+dash = "^4.0.0"
+dash-leaflet = "^1.1.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.2"
