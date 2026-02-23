@@ -19,7 +19,7 @@ from gui4psdm.more_functions import baue_map, datatable_from_csv, has_real_value
 )
 def build_data_table(value_dd):
 
-    if value_dd == None:
+    if value_dd is None:
         return html.Div(), html.Div(), "irgendwas"
     path = os.path.abspath("uploads") + "/" + value_dd
     with zipfile.ZipFile(path) as z:
@@ -31,7 +31,6 @@ def build_data_table(value_dd):
     data = {}
 
     with zipfile.ZipFile(path) as z:
-        a = z.namelist()
         for file_name in z.namelist():
             with z.open(file_name) as f:
                 table_name = file_name.split(".")[0]
@@ -49,7 +48,7 @@ def build_data_table(value_dd):
 )
 def set_zeile_hinzufuegen_uptions(data):
     options = {}
-    if not "daten" in globals():
+    if "daten" not in globals():
         options["Lade erst eine Datei hoch"] = "Lade erst eine Datei hoch"
         return options
 
@@ -76,7 +75,7 @@ def set_zeile_hinzufuegen_uptions(data):
     prevent_initial_call=True,
 )
 def update_output(n_submit, value):
-    if has_real_values(value) == False:
+    if has_real_values(value) is False:
         return no_update, no_update
     return "fertig", value
 
@@ -183,7 +182,7 @@ def build_tabelle_new(
     )
 
     for i in range(len(pruefe_auf_vollstaendigkeit[value])):
-        if pruefe_auf_vollstaendigkeit[value][i] == True and data[i] == None:
+        if pruefe_auf_vollstaendigkeit[value][i] is True and data[i] is None:
             return (
                 no_update,
                 no_update,
@@ -318,7 +317,6 @@ def daten_hinzufuegen(value):
             "tap_max",
         ],
     }
-    p = data[value].columns
     liste_zum_iterieren = attribute_aller_tabellen_standard[value]
     input_div = html.Div(
         [

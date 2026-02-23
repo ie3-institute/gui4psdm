@@ -36,8 +36,6 @@ def datatable_from_csv(data, title):
                 },
                 style_data_conditional=[
                     {
-                        "if": {"row_index": "odd"},
-                        "backgroundColor": "#A19C9CF6",
                         "if": {"state": "selected"},  # Zustand: ausgewählt
                         "backgroundColor": "#00FB3F",  # rote Hintergrundfarbe
                         "color": "black",
@@ -107,7 +105,7 @@ def baue_map(
     slack_marker = []
 
     for i in slack_dict:
-        if slack_dict[i] == True:
+        if slack_dict[i] is True:
             slack_marker = [
                 dl.Circle(
                     center=[geodaten_dict[i]["lat"], geodaten_dict[i]["lon"]],
@@ -182,7 +180,7 @@ def baue_map(
             ],
         )
         for p in geodaten_dict_switches
-        if geodaten_dict_switches[p]["closed"] == False
+        if geodaten_dict_switches[p]["closed"] is False
     ]
 
     schalter_opened = [
@@ -199,7 +197,7 @@ def baue_map(
             ],
         )
         for p in geodaten_dict_switches
-        if geodaten_dict_switches[p]["closed"] == True
+        if geodaten_dict_switches[p]["closed"] is True
     ]
 
     first_key = next(iter(geodaten_dict))

@@ -30,13 +30,9 @@ def initialisiere_map(value_dropdown):
     # Download-Karte Ordner erstellen, falls er nicht existiert
     if not os.path.exists("modified_networkmodels_folder"):
         os.makedirs("modified_networkmodels_folder")
-    path = os.path.abspath("modified_networkmodels_folder")
+    os.path.abspath("modified_networkmodels_folder")
 
-    if value_dropdown == None:
-        list_of_locations = {
-            "ie3": {"lat": 51.490912, "lon": 7.403925},
-        }
-
+    if value_dropdown is None:
         fig = dl.Map(
             center=[51.499428, 7.446744],
             zoom=12,
@@ -193,7 +189,7 @@ def initialisiere_map(value_dropdown):
 )
 def daten_bereitstellen(value_dd):
 
-    if value_dd == None:
+    if value_dd is None:
         return " "
     pfad = os.path.abspath("uploads") + "/" + value_dd
 
@@ -201,7 +197,6 @@ def daten_bereitstellen(value_dd):
     daten = {}
 
     with zipfile.ZipFile(pfad) as z:
-        a = z.namelist()
         for dateiname in z.namelist():
             with z.open(dateiname) as f:
                 tabellenname = dateiname.split(".")[0]
